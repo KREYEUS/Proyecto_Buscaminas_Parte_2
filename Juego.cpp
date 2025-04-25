@@ -223,7 +223,10 @@ void juega(tJuego& juego, int fila, int columna, tListaPosiciones& lista_pos) {
 	poner_celda(juego.tablero, fila, columna, celda);
 }
 
-
+int calcula_nivel(const tJuego& juego) {
+	int nFil = dame_num_filas(juego), nCol = dame_num_columnas(juego), nMin = dame_num_minas(juego);
+	int nivel = (nFil * nCol) / nMin;
+}
 
 
 int dame_num_descubiertas(const tJuego& juego) {
