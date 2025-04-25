@@ -34,6 +34,7 @@ void marcar_desmarcar(tJuego& juego, int fila, int columna);
 void ocultar(tJuego& juego, int fila, int columna);
 void juega(tJuego& juego, int fila, int columna, tListaPosiciones& lista_pos); 
 
-
+int calcula_nivel(const tJuego& juego);
+void crear_juego(int num_fils, int num_cols, int num_minas);
 
 int dame_num_descubiertas(const tJuego& juego);
