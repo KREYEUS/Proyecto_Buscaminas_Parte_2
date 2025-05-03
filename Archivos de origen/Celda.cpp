@@ -23,31 +23,16 @@ int dameNumero(const tCelda& celda)
 
 bool esVisible(const tCelda& celda)
 {
-	bool visible;
-
-	if (celda.visible == true)
-	{
-		visible = true;
-	}
-	else
-	{
-		visible = false;
-	}
-
-	return visible;
+	return celda.visible;
 }
 
 bool  esMina(const tCelda& celda)
 {
-	bool mina;
+	bool mina = false;
 
 	if (celda.estado == MINA)
 	{
 		mina = true;
-	}
-	else
-	{
-		mina = false;
 	}
 
 	return mina;
@@ -55,15 +40,11 @@ bool  esMina(const tCelda& celda)
 
 bool estaVacia(const tCelda& celda)
 {
-	bool vacia;
+	bool vacia = false;
 
 	if (celda.estado == VACIA)
 	{
 		vacia = true;
-	}
-	else
-	{
-		vacia = false;
 	}
 
 	return vacia;
@@ -71,15 +52,11 @@ bool estaVacia(const tCelda& celda)
 
 bool contieneNumero(const tCelda& celda)
 {
-	bool numero;
+	bool numero = false;
 
 	if (celda.estado == NUMERO)
 	{
 		numero = true;
-	}
-	else
-	{
-		numero = false;
 	}
 
 	return numero;
@@ -87,18 +64,7 @@ bool contieneNumero(const tCelda& celda)
 
 bool estaMarcada(const tCelda& celda)
 {
-	bool marcada;
-
-	if (celda.marcada == true)
-	{
-		marcada = true;
-	}
-	else
-	{
-		marcada = false;
-	}
-
-	return marcada;
+	return celda.marcada;
 }
 
 void  descubrir_celda(tCelda& celda)

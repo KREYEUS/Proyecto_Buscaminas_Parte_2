@@ -120,7 +120,7 @@ bool mina_explotada(const tJuego& juego) {
 
 bool esta_terminado(const tJuego& juego) {
 	bool terminado = false;
-	if (esta_completo(juego) == true || mina_explotada(juego) == true) {
+	if (esta_completo(juego) || mina_explotada(juego)) {
 		terminado = true;
 	}
 	return terminado;
@@ -185,9 +185,9 @@ void ocultar(tJuego& juego, int fila, int columna) {
 }
 
 void juega(tJuego& juego, int fila, int columna, tListaPosiciones& lista_pos) {
-	tCelda celda = dame_celda(juego.tablero, fila, columna);
 	int numCel;
 	if (es_valida(juego.tablero, fila, columna)) {
+		tCelda celda = dame_celda(juego.tablero, fila, columna);
 		if (!esVisible(celda) && !estaMarcada(celda)) {
 
 			descubrir_celda(celda);
@@ -213,14 +213,8 @@ void juega(tJuego& juego, int fila, int columna, tListaPosiciones& lista_pos) {
 				juego.mina_explotada = true;
 			}
 		}
-		else if (estaMarcada(celda)) {
-			cout << "La celda ya esta marcada. " << endl;
-		}
-	}
-	else {
-		cout << "Posicion invalida. " << endl;
-	}
-	poner_celda(juego.tablero, fila, columna, celda);
+		poner_celda(juego.tablero, fila, columna, celda);
+	}	
 }
 
 int calcula_nivel(const tJuego& juego) {
